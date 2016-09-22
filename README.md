@@ -9,3 +9,8 @@
 ## Корзина
 
 - [Удаление товара из корзины](https://github.com/brainmurder/insales-example/blob/master/cart/del_item.md)
+
+## Паганация
+
+- [Пример пагинации](https://github.com/brainmurder/insales-example/blob/master/paginate/paginate.md)
+
