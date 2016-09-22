@@ -86,23 +86,4 @@
   </div>
 {% endif %}
 
-{% if settings.pagination-show_hint %}
-  <div class="pagination-counter
-              sm-hidden xs-hidden"
-  >
-    {% assign from = paginate.current_offset %}
-
-    {% if paginate['current_page'] == paginate.parts.last.title %}
-      {% assign to = paginate.items %}
-    {% else %}
-      {% assign to = from | plus: paginate.page_size %}
-    {% endif %}
-
-    {% if paginate.pages == 1 and paginate.items <= paginate.page_size %}
-      {% assign to = paginate.items %}
-    {% endif %}
-
-    Показано с {{ from | plus: 1 }} по {{ to }} из {{ paginate.items }}
-  </div>
-{% endif %}
 ```
