@@ -18,8 +18,11 @@
 ## Help
 
 - [Склонение слова «товар»](https://github.com/brainmurder/insales-example/blob/master/help/product_size.md)
-- [Jade mixins для генерации настроек темы InSales](https://github.com/brainmurder/settings-generatop-InSales)
+
+## Utilities
+
 - [Утилита для работы с темами InSales на локальном диске](https://github.com/brainmurder/insales-uploader)
+- [Jade mixins для генерации настроек темы InSales](https://github.com/brainmurder/settings-generatop-InSales)
 
 ## Documentation
 
