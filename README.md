@@ -14,3 +14,7 @@
 
 - [Пагинация](https://github.com/brainmurder/insales-example/blob/master/paginate/paginate.md)
 - [Хлебные крошки](https://github.com/brainmurder/insales-example/blob/master/breadcrumbs/breadcrumbs.md)
+
+## Help
+
+- [Склонение слова «товар»](https://github.com/brainmurder/insales-example/blob/master/help/product_size.md)
