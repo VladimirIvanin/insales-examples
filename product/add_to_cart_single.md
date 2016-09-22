@@ -60,7 +60,7 @@ $(function(){
   function addToCart($form) {
     var
     formProduct = $form,
-    path        = formProduct.attr('action'),
+    path        = formProduct.attr('action') || '/cart_items',
     pathJson    = path + '.json',
     dataParam   = formProduct.serialize();
 
