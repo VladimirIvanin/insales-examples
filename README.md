@@ -18,3 +18,4 @@
 ## Help
 
 - [Склонение слова «товар»](https://github.com/brainmurder/insales-example/blob/master/help/product_size.md)
+- [Jade mixins для генерации настроек темы InSales](https://github.com/brainmurder/settings-generatop-InSales)
