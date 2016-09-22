@@ -29,6 +29,8 @@ variant_id: 81869763
 
 quantity: 1
 
+## liquid
+
 ```liquid
 <form action="{{ cart_url }}" method="post">
 
@@ -39,8 +41,10 @@ quantity: 1
   <button type="submit" data-buy>Купить</button>
 
 </form>
+```
 
-<script>
+## JavaScript
+```js
 //===========================================
 //Простой пример добавления товара через AJAX
 //===========================================
@@ -81,6 +85,5 @@ $(function(){
     addToCart( $(this).parents('form:first') );
   });
 });
-</script>
 
 ```
