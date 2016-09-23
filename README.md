@@ -19,9 +19,10 @@
 
 - [Склонение слова «товар»](https://github.com/brainmurder/insales-example/blob/master/help/product_size.md)
 
-## Utilities
+## Tools
 
 - [Утилита для работы с темами InSales на локальном диске](https://github.com/brainmurder/insales-uploader)
+- [Модуль для обмена данными с InSales по средствам Node.js](https://github.com/pomeo/node-insales)
 - [Jade mixins для генерации настроек темы InSales](https://github.com/brainmurder/settings-generatop-InSales)
 
 ## Documentation
