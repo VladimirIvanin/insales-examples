@@ -14,6 +14,7 @@
 
 - [Пагинация](https://github.com/brainmurder/insales-example/blob/master/paginate/paginate.md)
 - [Хлебные крошки](https://github.com/brainmurder/insales-example/blob/master/breadcrumbs/breadcrumbs.md)
+- [Живой поиск](https://github.com/brainmurder/insales-examples/blob/master/search/search_widget.md)
 
 ## Help
 
