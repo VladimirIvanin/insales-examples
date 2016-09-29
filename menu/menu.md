@@ -3,24 +3,24 @@
 ### Вызов сниппета
 
 ``` liquid
-{% include "menu", class: 'main-menu', handle: 'all', type: 'collection' %}
+{% include "menu", menu_class: 'main-menu', menu_handle: 'all', menu_type: 'collection' %}
 ```
 
 ### Код сниппета
 
 ``` liquid
-{% unless class %}
-  {% assign class = 'menu' %}
+{% unless menu_class %}
+  {% assign menu_class = 'menu' %}
 {% endunless %}
 
-{% if type == 'collection' %}
+{% if menu_type == 'collection' %}
 
   {% assign prev_link_level = 1 %}
-  {% assign root_level = collections[handle].level %}
+  {% assign root_level = collections[menu_handle].level %}
 
-  <ul class="{{ class }} level-1">
+  <ul class="{{ menu_class }} level-1">
 
-    {% for link in collections[handle].flatten_branch %}
+    {% for link in collections[menu_handle].flatten_branch %}
 
       {% assign current = '' %}
       {% if link.current? %}
@@ -37,19 +37,19 @@
 
       {% assign node_level = link.level | minus: root_level %}
 
-      <li class="{{ class }}-item menu-item level-{{ node_level }} {{ current }}">
-          <span class="{{ class }}-icon menu-icon level-{{ node_level }}"></span>
+      <li class="{{ menu_class }}-item menu-item level-{{ node_level }} {{ current }}">
+          <span class="{{ menu_class }}-icon menu-icon level-{{ node_level }}"></span>
 
-          <a href="{{ link.url }}" class="{{ class }}-link level-{{ node_level }}">
+          <a href="{{ link.url }}" class="{{ menu_class }}-link level-{{ node_level }}">
             {{ link.title }}
           </a>
 
           {% if link.subcollections.size > 0 %}
-            <button class="{{ class }}-marker menu-marker level-{{ node_level }}" type="button"></button>
+            <button class="{{ menu_class }}-marker menu-marker level-{{ node_level }}" type="button"></button>
           {% endif %}
 
         {% if link.subcollections.size > 0 %}
-          <ul class="{{ class }} level-{{ node_level | plus: 1 }}">
+          <ul class="{{ menu_class }} level-{{ node_level | plus: 1 }}">
         {% endif %}
 
       </li>
@@ -66,18 +66,18 @@
   </ul>
 
 {% else %}
-  <ul class="{{ class }}">
+  <ul class="{{ menu_class }}">
 
-    {% for link in linklists[handle].links %}
+    {% for link in linklists[menu_handle].links %}
 
       {% assign current = '' %}
       {% if link.current? %}
         {% assign current = 'is-current' %}
       {% endif %}
 
-      <li class="{{ class }}-item menu-item level-1 {{ current }}">
-        <span class="{{ class }}-icon level-1"></span>
-        <a href="{{ link.url }}" class="{{ class }}-link level-1">
+      <li class="{{ menu_class }}-item menu-item level-1 {{ current }}">
+        <span class="{{ menu_class }}-icon level-1"></span>
+        <a href="{{ link.url }}" class="{{ menu_class }}-link level-1">
           {{ link.title }}
         </a>
       </li>
@@ -88,8 +88,8 @@
 {% endif %}
 
 {% assign prev_link_level = null %}
-{% assign handle = null %}
-{% assign class = null %}
-{% assign type = null %}
+{% assign menu_handle = null %}
+{% assign menu_class = null %}
+{% assign menu_type = null %}
 
 ```
