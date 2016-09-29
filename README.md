@@ -11,7 +11,7 @@
 - [Удаление товара из корзины](https://github.com/brainmurder/insales-example/blob/master/cart/del_item.md)
 
 ## UI
-
+- [Меню](https://github.com/brainmurder/insales-examples/blob/master/menu/menu.md)
 - [Пагинация](https://github.com/brainmurder/insales-example/blob/master/paginate/paginate.md)
 - [Хлебные крошки](https://github.com/brainmurder/insales-example/blob/master/breadcrumbs/breadcrumbs.md)
 - [Живой поиск](https://github.com/brainmurder/insales-examples/blob/master/search/search_widget.md)
