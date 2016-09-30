@@ -16,11 +16,10 @@
 {% if itemsizex > 4 and itemsizex < 10 %}
   {% assign productnames = 'товаров' %}
 {% endif %}
-{% if itemsize > 4 and itemsize < 20 %}
-  {% assign productnames = 'товаров' %}
-{% endif %}
 {% if itemsizex > 1 and itemsizex < 5 %}
   {% assign productnames = 'товара' %}
 {% endif %}
-
+{% if itemsize > 4 and itemsize < 20 %}
+  {% assign productnames = 'товаров' %}
+{% endif %}
 ```
