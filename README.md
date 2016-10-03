@@ -15,6 +15,7 @@
 ## Help
 
 - [Склонение слова «товар»](https://github.com/brainmurder/insales-example/blob/master/help/product_size.md)
+- [Вывод названия месяца](https://github.com/brainmurder/insales-examples/blob/master/month/month.md)
 
 ## Tools
 
