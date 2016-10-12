@@ -19,7 +19,7 @@
   </span>
 
   {% case template %}
-    {% when 'page' %}
+    {% when template contains 'page.' %}
       <span class="breadcrumbs-page">{{ page.title }}</span>
 
     {% when 'search' %}
@@ -41,7 +41,7 @@
     {% when 'compare' %}
       <span class="breadcrumbs-page">Сравнение</span>
 
-    {% when 'collection' %}
+    {% when template contains 'collection.' %}
 
       {% if current_collections.size > 0  %}
 
@@ -55,6 +55,8 @@
                 {{ pipe_sign }}
               </span>
             {% endif %}
+          {% else %}
+            <span class="breadcrumbs-page">{{ collection.title }}</span>
           {% endif %}
         {% endfor %}
 
