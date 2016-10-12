@@ -5,7 +5,7 @@
 ```liquid
 {% if paginate.parts.size > 1 %}
 
-  <div class="sm-center xs-center">
+  <div>
     <ul class="pagination pagination--horizontal">
 
     {% if paginate.previous %}
