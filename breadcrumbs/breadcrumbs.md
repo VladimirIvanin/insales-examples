@@ -120,7 +120,7 @@
           {% endfor %}
 
           {% for collection in deep_collection.current_collections %}
-            {% if collection.level > 0 %}
+            {% if collection.level >= 0 %}
               {% if forloop.last %}
                 <a href="{{ collection.url }}" class="breadcrumbs-page">{{ collection.title }}</a>
                 <span class="breadcrumbs-pipe">
@@ -143,5 +143,4 @@
     {% else %}
   {% endcase %}
 </div>
-
 ```
