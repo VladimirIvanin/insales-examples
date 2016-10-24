@@ -1,10 +1,8 @@
 # Пример хлебных крошек для платформы InSales
 
-В примере используются шрифтовые иконки fontawesome.
-
 ```liquid
-{% assign home_sign = '<i class="fa fa-home"></i>' %}
-{% assign pipe_sign = '<i class="fa fa-angle-right"></i>' %}
+{% assign home_sign = 'Главная' %}
+{% assign pipe_sign = ' / ' %}
 
 <div class="breadcrumbs">
 
@@ -86,14 +84,14 @@
 
       {% endif %}
 
-    {% when 'product' %}
+    {% when template contains 'product.' %}
 
       {% if current_collections.size > 0 and collection.handle != 'frontpage' %}
 
         {% for collection in current_collections %}
           {% if collection.level > 0 %}
             {% if forloop.last %}
-              {% if template == 'product' %}
+              {% if template contains 'product.' %}
                 <a href="{{ collection.url }}" class="breadcrumbs-page">{{ collection.title }}</a>
                 <span class="breadcrumbs-pipe">
                   {{ pipe_sign }}
@@ -109,10 +107,10 @@
               </span>
             {% endif %}
           {% endif %}
+          {% else %}
         {% endfor %}
 
       {% else %}
-
         {% if product.collections.size > 0 %}
           {% assign deep_collection = product.collections.first %}
           {% for collection in product.collections %}
@@ -135,6 +133,8 @@
                   {{ pipe_sign }}
                 </span>
               {% endif %}
+                {% else %}
+                <span class="breadcrumbs-page">{{ product.title }}</span>
             {% endif %}
           {% endfor %}
         {% endif %}
@@ -143,4 +143,5 @@
     {% else %}
   {% endcase %}
 </div>
+
 ```
