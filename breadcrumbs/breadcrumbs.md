@@ -17,7 +17,7 @@
   </span>
 
   {% case template %}
-    {% when template contains 'page.' %}
+    {% when 'page' %}
       <span class="breadcrumbs-page">{{ page.title }}</span>
 
     {% when 'search' %}
@@ -39,7 +39,7 @@
     {% when 'compare' %}
       <span class="breadcrumbs-page">Сравнение</span>
 
-    {% when template contains 'collection.' %}
+    {% when 'collection' %}
 
       {% if current_collections.size > 0  %}
 
@@ -84,9 +84,9 @@
 
       {% endif %}
 
-    {% when template contains 'product.' %}
+    {% when 'product' %}
 
-      {% if current_collections.size > 0 and collection.handle != 'frontpage' %}
+      {% if current_collections.size > 0 %}
 
         {% for collection in current_collections %}
           {% if collection.level > 0 %}
