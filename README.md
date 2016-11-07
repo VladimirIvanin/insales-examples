@@ -3,19 +3,19 @@
 Примеры кода написаны для ознакомительных и учебных целей. 
 
 ## Корзина
-- [Самый простой пример добавления товара в корзину.](https://github.com/brainmurder/insales-example/blob/master/product/add_to_cart_single.md)
-- [Удаление товара из корзины](https://github.com/brainmurder/insales-example/blob/master/cart/del_item.md)
+- [Самый простой пример добавления товара в корзину.](https://github.com/VladimirIvanin/insales-example/blob/master/product/add_to_cart_single.md)
+- [Удаление товара из корзины](https://github.com/VladimirIvanin/insales-example/blob/master/cart/del_item.md)
 
 ## UI
-- [Меню](https://github.com/brainmurder/insales-examples/blob/master/menu/menu.md)
-- [Пагинация](https://github.com/brainmurder/insales-example/blob/master/paginate/paginate.md)
-- [Хлебные крошки](https://github.com/brainmurder/insales-example/blob/master/breadcrumbs/breadcrumbs.md)
-- [Живой поиск](https://github.com/brainmurder/insales-examples/blob/master/search/search_widget.md)
+- [Меню](https://github.com/VladimirIvanin/insales-examples/blob/master/menu/menu.md)
+- [Пагинация](https://github.com/VladimirIvanin/insales-example/blob/master/paginate/paginate.md)
+- [Хлебные крошки](https://github.com/VladimirIvanin/insales-example/blob/master/breadcrumbs/breadcrumbs.md)
+- [Живой поиск](https://github.com/VladimirIvanin/insales-examples/blob/master/search/search_widget.md)
 
 ## Help
 
-- [Склонение слова «товар»](https://github.com/brainmurder/insales-example/blob/master/help/product_size.md)
-- [Вывод названия месяца](https://github.com/brainmurder/insales-examples/blob/master/month/month.md)
+- [Склонение слова «товар»](https://github.com/VladimirIvanin/insales-examples/blob/master/help/article_created_at.md)
+- [Вывод названия месяца](https://github.com/VladimirIvanin/insales-examples/blob/master/month/month.md)
 
 ## Tools
 
