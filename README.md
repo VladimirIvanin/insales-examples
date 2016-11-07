@@ -14,8 +14,8 @@
 
 ## Help
 
-- [Склонение слова «товар»](https://github.com/VladimirIvanin/insales-examples/blob/master/help/article_created_at.md)
-- [Вывод названия месяца](https://github.com/VladimirIvanin/insales-examples/blob/master/month/month.md)
+- [Склонение слова «товар»](https://github.com/VladimirIvanin/insales-examples/blob/master/help/product_size.md)
+- [Вывод названия месяца](https://github.com/VladimirIvanin/insales-examples/blob/master/help/article_created_at.md)
 
 ## Tools
 
