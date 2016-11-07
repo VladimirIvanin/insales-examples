@@ -3,7 +3,7 @@
 Стандартного вывода даты в формате 25 февраля, к сожалению, нет.
 Для этого следуюет использовать следующий сниппет:
 
-```liquid
+```
       {% assign month = '' %}
       {% assign monthdate = article.created_at | date: "%B" %}
       {% case monthdate %}
@@ -40,6 +40,6 @@
 
 Сам вывод даты:
 
-```liquid
+```
 {{ article.created_at | date: "%d" }} {{ month }}
 ```
