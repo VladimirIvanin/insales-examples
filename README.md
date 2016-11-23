@@ -7,7 +7,7 @@
 - [Удаление товара из корзины](https://github.com/VladimirIvanin/insales-examples/blob/master/cart/del_item.md)
 
 ## UI
-- [Меню](https://github.com/VladimirIvanin/insales-examples/blob/master/menu/menu.md)
+- [Меню](https://github.com/VladimirIvanin/insales-examples/tree/master/menu)
 - [Пагинация](https://github.com/VladimirIvanin/insales-examples/blob/master/paginate/paginate.md)
 - [Хлебные крошки](https://github.com/VladimirIvanin/insales-examples/blob/master/breadcrumbs/breadcrumbs.md)
 - [Живой поиск](https://github.com/VladimirIvanin/insales-examples/blob/master/search/search_widget.md)
