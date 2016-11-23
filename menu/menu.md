@@ -1,95 +1,102 @@
-# Сниппет для постоения меню на платформе InSales
+# Сниппет для генерации меню
 
-### Вызов сниппета
+Основная задача - построение единообразной верстки меню из
 
-``` liquid
-{% include "menu", menu_class: 'main-menu', menu_handle: 'all', menu_type: 'collection' %}
-```
+* указанной коллекции, с поддержкой многоуровневости
+* меню `linklists`, одноуровневое
 
-### Код сниппета
+## Применение
 
-``` liquid
-{% unless menu_class %}
-  {% assign menu_class = 'menu' %}
-{% endunless %}
+* Скопировать файл `menu.liquid` в папку `snippets` темы
+* Вызвать в нужном месте сниппет
+* Застилить результат
 
-{% if menu_type == 'collection' %}
+# Пример
 
-  {% assign prev_link_level = 1 %}
-  {% assign root_level = collections[menu_handle].level %}
+Вызов
 
-  <ul class="{{ menu_class }} level-1">
+````liquid
+{% include "menu", menu_class: 'main-menu', source_type: 'collection', source_handle: 'all', show_icon: true %}
+````
 
-    {% for link in collections[menu_handle].flatten_branch %}
+Результат
 
-      {% assign current = '' %}
-      {% if link.current? %}
-        {% assign current = 'is-current' %}
-      {% endif %}
+````html
+<ul class="main-menu menu level-1">
+  <li class="main-menu-item menu-item level-1">
+    <span class="main-menu-icon menu-icon level-1"></span>
 
-      {% assign level_difference = prev_link_level | minus: link.level | minus: root_level %}
+    <a href="/link/url" class="main-menu-link menu-link level-1">
+      <!-- link.title -->
+    </a>
 
-      {% if level_difference > 0 %}
-        {% for i in (1..level_difference) %}
-          </ul>
-        {% endfor %}
-      {% endif %}
+    <button class="main-menu-marker menu-marker menu-marker level-1" type="button"></button>
 
-      {% assign node_level = link.level | minus: root_level %}
+    <ul class="main-menu menu level-2">
+      <li class="main-menu-item menu-item level-2">
+        <span class="main-menu-icon menu-icon level-2"></span>
 
-      <li class="{{ menu_class }}-item menu-item level-{{ node_level }} {{ current }}">
-          <span class="{{ menu_class }}-icon menu-icon level-{{ node_level }}"></span>
-
-          <a href="{{ link.url }}" class="{{ menu_class }}-link level-{{ node_level }}">
-            {{ link.title }}
-          </a>
-
-          {% if link.subcollections.size > 0 %}
-            <button class="{{ menu_class }}-marker menu-marker level-{{ node_level }}" type="button"></button>
-          {% endif %}
-
-        {% if link.subcollections.size > 0 %}
-          <ul class="{{ menu_class }} level-{{ node_level | plus: 1 }}">
-        {% endif %}
-
-      </li>
-
-      {% assign prev_link_level = node_level %}
-      {% if forloop.last %}
-        {% assign prev_link_level = node_level | minus: 1 %}
-        {% for i in (1..prev_link_level) %}
-          </ul>
-        {% endfor %}
-      {% endif %}
-
-    {% endfor %}
-  </ul>
-
-{% else %}
-  <ul class="{{ menu_class }}">
-
-    {% for link in linklists[menu_handle].links %}
-
-      {% assign current = '' %}
-      {% if link.current? %}
-        {% assign current = 'is-current' %}
-      {% endif %}
-
-      <li class="{{ menu_class }}-item menu-item level-1 {{ current }}">
-        <span class="{{ menu_class }}-icon level-1"></span>
-        <a href="{{ link.url }}" class="{{ menu_class }}-link level-1">
-          {{ link.title }}
+        <a href="/link/url" class="main-menu-link menu-link level-2">
+          <!-- link.title -->
         </a>
       </li>
 
-    {% endfor %}
-  </ul>
+      <li class="main-menu-item menu-item level-2">
+        <span class="main-menu-icon menu-icon level-2"></span>
 
-{% endif %}
+        <a href="/link/url" class="main-menu-link menu-link level-2">
+          <!-- link.title -->
+        </a>
+      </li>
 
-{% assign prev_link_level = null %}
-{% assign menu_handle = null %}
-{% assign menu_class = null %}
-{% assign menu_type = null %}
+      <li class="main-menu-item menu-item level-2">
+        <span class="main-menu-icon menu-icon level-2"></span>
 
-```
+        <a href="/link/url" class="main-menu-link menu-link level-2">
+          <!-- link.title -->
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="main-menu-item menu-item level-1">
+    <span class="main-menu-icon menu-icon level-1"></span>
+
+    <a href="/link/url" class="main-menu-link menu-link level-1">
+      <!-- link.title -->
+    </a>
+  </li>
+
+  <li class="main-menu-item menu-item level-1">
+    <span class="main-menu-icon menu-icon level-1"></span>
+
+    <a href="/link/url" class="main-menu-link menu-link level-1">
+      <!-- link.title -->
+    </a>
+  </li>
+</ul>
+````
+
+## Элементы
+
+* `menu` - главный контейнер
+* `menu-item` - пункт меню
+* `menu-icon` - место под иконку/маркер, опционален, выводится для всех пунктов
+* `menu-link` - ссылка
+* `meni-marker` - маркер, выводится, если данный пункт является родителем для ещё одного уровня
+
+`level-{{ x }}` - класс-модификатор, указывает, на каком уровне меню находится данный элемент. Автоматически добавляется для любого элемента.
+
+## Настройка
+
+При вызове сниппета передаются следующие параметры
+
+* `source_type` - **объязателн** `collection` | `linklists`, указывает, что мы рендерим
+* `source_handle` - **объязателн** handle источника, коллекции или меню
+* `menu_class` - **опционально** опорный класс для вывода в данном месте, добавляется ко всем узлам
+* `show_icon` - **опционально** генерить ли азметку под иконки.
+* `level_limit` - **опционально** ограничение глубины меню.
+
+## Дополнительные миксины
+
+ННада?
