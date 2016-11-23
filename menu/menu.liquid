@@ -1,0 +1,102 @@
+{% unless level_limit %}
+  {% assign level_limit = 100 %}
+{% endunless %}
+
+{% if source_type == 'collection' %}
+
+  {% assign prev_link_level = 1 %}
+  {% assign root_level = collections[source_handle].level %}
+
+  <ul class="{{ menu_class }} menu level-1">
+
+    {% for link in collections[source_handle].flatten_branch %}
+
+      {% assign node_level = link.level | minus: root_level %}
+      {% assign _in_limit = level_limit | minus: node_level %}
+      {% assign _next_level_in_limit = _in_limit | minus: 1 %}
+
+      {% assign show_level = false %}
+      {% if _in_limit >= 0 %}
+        {% assign show_level = true %}
+      {% endif %}
+
+      {% assign show_next_level = false %}
+      {% if link.subcollections.size > 0 and  _next_level_in_limit >= 0 %}
+        {% assign show_next_level = true %}
+      {% endif %}
+
+      {% assign current = '' %}
+
+      {% if show_level %}
+
+        {% if link.current? %}
+          {% assign current = 'is-current' %}
+        {% endif %}
+
+        {% assign level_difference = prev_link_level | minus: link.level | minus: root_level %}
+
+        {% if level_difference > 0 %}
+          {% for i in (1..level_difference) %}
+            </ul>
+          {% endfor %}
+        {% endif %}
+
+        <li class="{{ menu_class }}-item menu-item level-{{ node_level }} {{ current }}">
+          {% if show_icon %}
+            <span class="{{ menu_class }}-icon menu-icon level-{{ node_level }}"></span>
+          {% endif %}
+
+          <a href="{{ link.url }}" class="{{ menu_class }}-link menu-link level-{{ node_level }}">
+            {{ link.title }}
+          </a>
+
+          {% if show_next_level %}
+            <button class="{{ menu_class }}-marker menu-marker menu-marker level-{{ node_level }}" type="button"></button>
+
+            <ul class="{{ menu_class }} menu level-{{ node_level | plus: 1 }}">
+          {% endif %}
+
+        </li>
+
+        {% assign prev_link_level = node_level %}
+
+        {% if forloop.last %}
+          {% assign prev_link_level = node_level | minus: 1 %}
+          {% for i in (1..prev_link_level) %}
+            </ul>
+          {% endfor %}
+        {% endif %}
+
+      {% endif %}
+
+    {% endfor %}
+  </ul>
+
+{% else %}
+  <ul class="{{ menu_class }} menu">
+
+    {% for link in linklists[source_handle].links %}
+
+      {% assign current = '' %}
+      {% if link.current? %}
+        {% assign current = 'is-current' %}
+      {% endif %}
+
+      <li class="{{ menu_class }}-item menu-item level-1 {{ current }}">
+        <span class="{{ menu_class }}-icon menu-icon level-1"></span>
+        <a href="{{ link.url }}" class="{{ menu_class }}-link menu-link level-1">
+          {{ link.title }}
+        </a>
+      </li>
+
+    {% endfor %}
+  </ul>
+
+{% endif %}
+
+{% assign prev_link_level = null %}
+{% assign source_handle = null %}
+{% assign menu_class = null %}
+{% assign source_type = null %}
+{% assign show_icon = null %}
+{% assign level_limit = null %}
