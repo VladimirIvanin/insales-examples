@@ -19,3 +19,27 @@
 {% endfor %}
 </ul>
 ```
+
+Связать разные linklists через пункт меню.
+Добавляя ссылку в меню нужно придерживаться конструкции `/linklists/` + `пермалинк нужного линклиста`
+Например `/linklists/footer`
+
+```
+<ul>
+{% for link in linklists.main.links %}
+  {% if link.url contains '/linklists/' %}
+    {% assign menu_handle = link.url | split: '/linklists/' | last %}
+    {% if linklists[menu_handle].links.size > 0 %}
+    <li>
+      <span>{{ link.title }}</a>
+        <ul>
+          {% for link_level_2 in linklists[menu_handle].links %}
+          <li class="{% if link_level_2.current? %}active{% endif %}" ><a href="{{ link_level_2.url }}">{{ link_level_2.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</ul>
+```
