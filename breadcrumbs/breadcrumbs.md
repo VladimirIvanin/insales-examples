@@ -6,7 +6,7 @@
   <ul class="breadcrumb">
 
     <li class="breadcrumb-item home">
-      <a class="breadcrumb-link" title='{{ messages.breadcrumb_home }}' href="/">Главная</a>
+      <a class="breadcrumb-link" href="/">Главная</a>
     </li>
 
       {% if template contains 'page.' or template == 'page' %}
