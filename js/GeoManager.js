@@ -140,6 +140,8 @@ GeoManager.prototype.getKladrData = function () {
     })
     .done(function(kladrData) {
       self.setLog('Данные получены из kladr.insales.ru', kladrData);
+      localforage.setItem(self.option.keyParameters, kladrData);
+                          
       dfd.resolve( kladrData );
     })
     .fail(function(err) {
