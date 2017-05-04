@@ -156,7 +156,7 @@ GeoManager.prototype.getKladrData = function () {
 // Установить свои данные
 GeoManager.prototype.setLocalData = function (newLocals, _setCallback) {
   var self = this;
-  var setCallback = _setCallback || _setCallback;
+  var setCallback = _setCallback || function () {};
   localforage.setItem(self.option.keyParameters, newLocals, function(err, newlocalData) {
     if (newlocalData) {
       self.setLog('В хранилище обновлены данные через метод setLocalData', newlocalData);
