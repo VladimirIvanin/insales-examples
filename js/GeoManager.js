@@ -140,7 +140,9 @@ GeoManager.prototype.getKladrData = function () {
     })
     .done(function(kladrData) {
       self.setLog('Данные получены из kladr.insales.ru', kladrData);
-      localforage.setItem(self.option.keyParameters, kladrData);
+      if (window.localforage && self.option.use_forage) {
+        localforage.setItem(self.option.keyParameters, kladrData);
+      }
                           
       dfd.resolve( kladrData );
     })
@@ -157,14 +159,16 @@ GeoManager.prototype.getKladrData = function () {
 GeoManager.prototype.setLocalData = function (newLocals, _setCallback) {
   var self = this;
   var setCallback = _setCallback || function () {};
-  localforage.setItem(self.option.keyParameters, newLocals, function(err, newlocalData) {
-    if (newlocalData) {
-      self.setLog('В хранилище обновлены данные через метод setLocalData', newlocalData);
-      setCallback(newlocalData);
-    }else{
-      self.setLog('Не удалось обновить данные');
-    }
-  });
+  if (window.localforage && self.option.use_forage) {
+    localforage.setItem(self.option.keyParameters, newLocals, function(err, newlocalData) {
+      if (newlocalData) {
+        self.setLog('В хранилище обновлены данные через метод setLocalData', newlocalData);
+        setCallback(newlocalData);
+      }else{
+        self.setLog('Не удалось обновить данные');
+      }
+    });
+  }
 };
 
 // Дебагер
