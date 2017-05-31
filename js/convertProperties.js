@@ -2,7 +2,7 @@ var convertProperties = function (_product) {
   _product.parameters = {};
   _product.sale = null;
 
-  // Имя параметра: массив шарактеристик
+  // Имя параметра: массив характеристик
   $.each( _product.properties, function( index, property ){
 
     $.each( _product.characteristics, function( index, characteristic ){
