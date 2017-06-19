@@ -29,6 +29,17 @@ variant_id: 81869763
 
 quantity: 1
 
+```js
+/* Пример на jQuery */
+$.post('/cart_items.json', {
+    variant_id: 81869763,
+    quantity: 1
+  })
+  .done(function (cart) {
+    console.log(cart);
+  })
+```
+
 ## liquid
 
 ```liquid
