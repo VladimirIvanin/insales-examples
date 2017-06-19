@@ -17,6 +17,8 @@ $.post('/cart_items/81869763.json', {
   })
 ```
 
+## Пример с кнопкой "удалить"
+
 ```liquid
 <div class="cart">
   {% for item in cart.items %}
