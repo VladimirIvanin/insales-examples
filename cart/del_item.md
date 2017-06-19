@@ -8,6 +8,15 @@
 
 _method=delete
 
+```js
+$.post('/cart_items/81869763.json', {
+    _method: "delete"
+  })
+  .done(function (cart) {
+    console.log(cart);
+  })
+```
+
 ```liquid
 <div class="cart">
   {% for item in cart.items %}
