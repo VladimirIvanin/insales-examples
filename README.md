@@ -17,10 +17,20 @@
 - [Склонение слова «товар»](https://github.com/VladimirIvanin/insales-examples/blob/master/help/product_size.md)
 - [Вывод названия месяца](https://github.com/VladimirIvanin/insales-examples/blob/master/help/article_created_at.md)
 
+## Модули
+
+- [Ранее просмотренные товары](https://github.com/VladimirIvanin/RecentlyView)
+- [Определение местоположения пользователя](https://github.com/VladimirIvanin/geoManager)
+
+## Плагины
+
+- [Табы на jQuery](https://github.com/VladimirIvanin/dataTabs)
+
 ## Tools
 
 - [Утилита для работы с темами InSales на локальном диске](https://github.com/brainmurder/insales-uploader)
 - [Модуль для обмена данными с InSales по средствам Node.js](https://github.com/pomeo/node-insales)
+- [Сборщик шаблонов для InSales](https://github.com/VladimirIvanin/insales-template-builder)
 - [Jade mixins для генерации настроек темы InSales](https://github.com/brainmurder/settings-generatop-InSales)
 
 ## Documentation
