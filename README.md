@@ -21,6 +21,7 @@
 
 - [Ранее просмотренные товары](https://github.com/VladimirIvanin/RecentlyView)
 - [Определение местоположения пользователя](https://github.com/VladimirIvanin/geoManager)
+- [Избранное](https://github.com/VladimirIvanin/favorites)
 
 ## Плагины
 
