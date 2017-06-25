@@ -22,7 +22,7 @@
 - [Ранее просмотренные товары](https://github.com/VladimirIvanin/RecentlyView)
 - [Определение местоположения пользователя](https://github.com/VladimirIvanin/geoManager)
 - [Избранное](https://github.com/VladimirIvanin/favorites)
-- [Отправки сообщений](https://github.com/VladimirIvanin/InSalesFeedback)
+- [Отправка сообщений](https://github.com/VladimirIvanin/InSalesFeedback)
 
 ## Плагины
 
