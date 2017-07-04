@@ -23,6 +23,7 @@
 - [Определение местоположения пользователя](https://github.com/VladimirIvanin/geoManager)
 - [Избранное](https://github.com/VladimirIvanin/favorites)
 - [Отправка сообщений](https://github.com/VladimirIvanin/InSalesFeedback)
+- [Плагин для обновления информации товара](https://github.com/VladimirIvanin/variantsModifier)
 
 ## Плагины
 
