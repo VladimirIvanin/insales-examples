@@ -1,4 +1,7 @@
 /*
+  Не рабатает в ie 11
+  Для ie 11 подключать https://github.com/WebReflection/dom4
+
   var myProgress = new PageLoadProgress({
       elements: '.promo-wrap img, header img',
       onUpdate: function (onUpdate) {
