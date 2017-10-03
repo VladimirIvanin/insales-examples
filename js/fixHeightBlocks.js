@@ -13,21 +13,25 @@
 function fixHeightBlocks(selector, innerSelector, _cssValue) {
   var cssValue = _cssValue || 'margin-bottom';
   var $blocks = $(selector);
-  var groups = {}
+  var groups = {};
 
   $blocks.each(function(index, el) {
-    var scrolltop = $(el).offset().top;
-    if (!groups[scrolltop]) {
-      groups[scrolltop] = {
-        isMax: 0,
-        items: []
+    if ($(el).is(':visible')) {
+      var scrolltop = $(el).offset().top;
+
+      if (!groups[scrolltop]) {
+        groups[scrolltop] = {
+          isMax: 0,
+          items: []
+        }
       }
-    }
 
-    groups[scrolltop].items.push(el);
+      groups[scrolltop].items.push(el);
 
-    if ($(el).outerHeight() > groups[scrolltop].isMax) {
-      groups[scrolltop].isMax = $(el).outerHeight();
+      if ($(el).outerHeight() > groups[scrolltop].isMax) {
+        groups[scrolltop].isMax = $(el).outerHeight();
+      }
+
     }
   });
 
@@ -35,11 +39,16 @@ function fixHeightBlocks(selector, innerSelector, _cssValue) {
     var isMax = group.isMax;
     var $blocks = group.items;
     $.each($blocks, function(index, el) {
-      if ($(el).outerHeight() < isMax) {
-        var _margin = isMax - $(el).outerHeight();
-
-        $(el).find(innerSelector).css(cssValue, _margin);
+      var _margin = isMax - $(el).outerHeight();
+      var $item = $(el);
+      if (innerSelector) {
+        $item = $(el).find(innerSelector);
       }
+      if (_margin < 0) {
+        _margin = 0;
+      }
+
+      $item.css(cssValue, _margin);
     });
   });
 }
