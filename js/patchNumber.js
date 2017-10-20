@@ -33,6 +33,7 @@ function patchNumber (num) {
 
   if(isString){
     num = num.replace(/,/g, '.');
+    num = num.replace(/px/g, '');
     num = (isNaN(+num)) ? 1 : +num;
   }
 
