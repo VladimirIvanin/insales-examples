@@ -1,7 +1,7 @@
 /**
  * Выравнивание блоков по высоте
  * @param  {string} selector      блоки которые нужно выровнять
- * @param  {string} innerSelector внутренний блок
+ * @param  {string/boolean} innerSelector внутренний блок, если указан то свойство добавиться этому блоку, если выставить false, то значение подставляется блоку указанному в 'selector'
  * @param  {string} _cssValue     css свойство для подстановки значения
  *
   fixHeightBlocks('.card', '.card-title', 'padding-bottom')
