@@ -44,8 +44,8 @@ function fixHeightBlocks(selector, innerSelector, _cssValue) {
       if (innerSelector) {
         $item = $(el).find(innerSelector);
       }
-      if (_margin < 0) {
-        _margin = 0;
+      if (_margin <= 0) {
+        _margin = $(el).css(cssValue) || 0;
       }
 
       $item.css(cssValue, _margin);
