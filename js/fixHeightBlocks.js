@@ -5,6 +5,8 @@
  * @param  {string} _cssValue     css свойство для подстановки значения
  *
   fixHeightBlocks('.card', '.card-title', 'padding-bottom')
+  // or
+  fixHeightBlocks('.card', false, 'padding-bottom')
 
    $(window).on('resize', function(event) {
      fixHeightBlocks('.card', '.card-title', 'padding-bottom')
