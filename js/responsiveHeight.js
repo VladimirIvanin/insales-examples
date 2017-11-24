@@ -16,11 +16,11 @@ responsiveHeight('.js-gallery-thumbs', [{
  */
 
 function responsiveHeight(selector, breakpoints) {
-  var defaults = [{
+  var defaults = {
     minWidth: 320,
     height: 'initial',
     onUpdate: function () {}
-  }]
+  }
 
   updateHeight();
   $(window).on('resize', function(event) {
