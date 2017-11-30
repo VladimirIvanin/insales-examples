@@ -6,14 +6,19 @@ Id варианта
 <%= product.variants[0].id %>
 
 Стикеры
-<%= var labels_list = ''; %>
-<% _.forEach(characteristics, function (characteristic){  %>
-  <% if(characteristic.property.permalink == 'stiker'){ %>
-    <%= var labels_list += '<div class="stiker stiker-' %>
-    <%= var labels_list += characteristic.permalink %>
-    <%= var labels_list += '">' %>
-    <%= var labels_list += characteristic.title %>
-    <%= var labels_list += '</div>' %>
-  <% } %>
-<% }); %>
+function getStiker (name, characteristics) {
+  var labels_list = '';
+  _.forEach(characteristics, function (characteristic){
+    if(characteristic.property.permalink == name){
+      labels_list += '<div class="stiker stiker-';
+      labels_list += characteristic.permalink;
+      labels_list += '">';
+      labels_list += characteristic.title;
+      labels_list += '</div>';
+    }
+  });
+
+  return labels_list;
+}
+
 ```
