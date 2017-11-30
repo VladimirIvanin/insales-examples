@@ -23,6 +23,26 @@ var convertProperties = function (_product) {
     });
 
   });
+  
+  var cashIds = {};
+  $.each(_product.option_names, function (option_name, index) {
+    _product.options[index].push(option_name);
+    $.each(_product.variants, function (variant) {
+      $.each(variant.option_values, function (option_value) {
+        var uniqId = option_value.option_name_id + ':' + option_value.id;
+
+        if (!_product.options[index]) {
+          _product.options[index].values = []
+        }
+
+        if (!cashIds[uniqId]) {
+          _product.options[index].values.push(option_value)
+        }
+
+        cashIds[uniqId] = true;
+      });
+    });
+  });
 
   // Скидка в процентах
   if (_product.variants) {
