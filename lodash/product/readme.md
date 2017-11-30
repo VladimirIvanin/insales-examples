@@ -1,4 +1,4 @@
-```
+```html
 <script type="text/template">
 Цена
 <%= Shop.money.format(product.variants[0].price) %>
