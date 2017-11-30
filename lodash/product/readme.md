@@ -1,11 +1,15 @@
 ```
+<script type="text/template">
 Цена
-<% Shop.money.format(product.variants[0].price) %>
+<%= Shop.money.format(product.variants[0].price) %>
 
 Id варианта
 <%= product.variants[0].id %>
 
 Стикеры
+<%= getStiker('stiker', product.characteristics) %>
+
+// js файл
 function getStiker (name, characteristics) {
   var labels_list = '';
   _.forEach(characteristics, function (characteristic){
@@ -20,5 +24,5 @@ function getStiker (name, characteristics) {
 
   return labels_list;
 }
-
+</script>
 ```
