@@ -8,8 +8,9 @@ if ($('[data-collection-infinity]').length) {
   $(window).on('scroll', function(event) {
     var scrollTop = html.scrollTop || body && body.scrollTop || 0;
     scrollTop -= html.clientTop;
+    var part = 1.7; // на это число разделиться высота контейнера с товарами
       
-    var collscroll = $('[data-collection-infinity]').get(0).offsetTop + ($('[data-collection-infinity]').outerHeight() / 1.7);
+    var collscroll = $('[data-collection-infinity]').get(0).offsetTop + ($('[data-collection-infinity]').outerHeight() / part);
     
     if (scrollTop > collscroll) {
       collectionInfinity();
@@ -17,6 +18,7 @@ if ($('[data-collection-infinity]').length) {
   });
 }
 
+// массив tempPage хранит метки страниц которые уже загрузили
 var tempPage = [];
 function collectionInfinity() {
   var _nextPage = $('[data-collection-infinity]').data('collection-infinity');
@@ -27,6 +29,7 @@ function collectionInfinity() {
     tempPage.push(_nextPage);
     $('body').addClass('body--loading');
     
+    // грузим контент
     $.ajax({
       url: _nextPage,
       dataType: 'html'
@@ -38,6 +41,10 @@ function collectionInfinity() {
       $('[data-collection-infinity]').append( $next.html() );
       $('[data-collection-infinity]').data('collection-infinity', _next).attr('data-collection-infinity', _next);
       
+      // тут можно 
+      // $('[data-product-id]').each(function(index, el) {
+      //    Products.initInstance($(el));
+      // });
     })
     .always(function () {
       $('body').removeClass('body--loading');
