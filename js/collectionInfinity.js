@@ -4,7 +4,6 @@
 */
 
 if ($('[data-collection-infinity]').length) {
-  // DetectiveScroll это просто обработчик скролла
   var html = document.documentElement;
   $(window).on('scroll', function(event) {
     var scrollTop = html.scrollTop || body && body.scrollTop || 0;
