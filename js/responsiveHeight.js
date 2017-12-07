@@ -8,6 +8,7 @@ responsiveHeight('.js-gallery-thumbs', [{
   },
   {
     minWidth: 769,
+    heightBlock: $('.masonry-item'),
     height: $('.galleryMain').height(),
     onUpdate: function () {
       // callback
@@ -16,15 +17,20 @@ responsiveHeight('.js-gallery-thumbs', [{
  */
 
 function responsiveHeight(selector, breakpoints) {
+  var self = this;
+
   var defaults = {
     minWidth: 320,
+    heightBlock: null, // Можно указать jquery селектор, будет браться его высота
     height: 'initial',
     onUpdate: function () {}
   }
 
   updateHeight();
   $(window).on('resize', function(event) {
-    updateHeight();
+    setTimeout(function () {
+      updateHeight();
+    }, 100)
   });
 
   function updateHeight() {
@@ -47,7 +53,11 @@ function responsiveHeight(selector, breakpoints) {
 
     $.each(breakpoints, function(index, el) {
       if (el.minWidth == breakpoint) {
-        elementHeight = el.height;
+        if (el.heightBlock) {
+          elementHeight = el.heightBlock.outerHeight();
+        }else{
+          elementHeight = el.height;
+        }
         onUpdate = el.onUpdate;
       }
     });
@@ -58,4 +68,6 @@ function responsiveHeight(selector, breakpoints) {
       onUpdate(elementHeight);
     }
   }
+
+  return self;
 }
