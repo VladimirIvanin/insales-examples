@@ -1,7 +1,26 @@
 ```html
 <script type="text/template">
-Цена
+
+Цены
 <%= Shop.money.format(product.variants[0].price) %>
+
+<% if (product.variants[0].old_price){ %>
+<div class="card-old_price">
+  <%= Shop.money.format(product.variants[0].old_price) %>
+</div>
+<% } %>
+<div class="card-price">
+  <%= Shop.money.format(product.variants[0].price) %>
+</div>
+
+
+Купить/Подробнее
+<% if (product.variants.size > 1){ %>
+  <a href="<%= product.url %>" class="bttn-prim">Подробнее</a>
+<% }else{ %>
+  <button data-item-add class="bttn-prim" type="button">В корзину</button>
+<% } %>
+
 
 Id варианта
 <%= product.variants[0].id %>
