@@ -1,4 +1,11 @@
+```js
+EventBus.subscribe('update_items:insales:cart', function (cart) {
+  $('.js-basket').html( Template.render(cart, 'basket') );
+});
+```
+
 ```html
+<div class="js-basket"></div>
 <script type="text/template" data-template-id="basket">
 
   <form action="{{ cart_url }}" method="post" data-cart-form>
