@@ -1,4 +1,4 @@
-```
+```html
 <script type="text/template" data-template-id="basket">
 
   <form action="{{ cart_url }}" method="post" data-cart-form>
