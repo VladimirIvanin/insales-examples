@@ -10,7 +10,15 @@ var convertProperties = function (_product) {
         setParam(_product.parameters, property.permalink, property)
         setParam(_product.parameters[ property.permalink ], 'characteristics', [])
 
-        _product.parameters[ property.permalink ].characteristics.push(characteristic)
+        var uniq = true;
+        $.each(_product.parameters[ property.permalink ].characteristics, function (index, cha) {
+          if (cha.id == characteristic.id) {
+            uniq = false;
+          }
+        });
+        if (uniq) {
+          _product.parameters[ property.permalink ].characteristics.push(characteristic)
+        }
       }
     });
 
