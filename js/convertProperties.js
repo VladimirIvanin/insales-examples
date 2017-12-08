@@ -7,18 +7,10 @@ var convertProperties = function (_product) {
 
     $.each( _product.characteristics, function( index, characteristic ){
       if (property.id === characteristic.property_id) {
-        var _characteristic = characteristic;
-        _characteristic.property_name = property.title;
-        _characteristic.property = {
-          backoffice: property.backoffice,
-          id: property.id,
-          is_hidden: property.is_hidden,
-          is_navigational: property.is_navigational,
-          permalink: property.permalink,
-          position: property.position,
-          title: property.title
-        };
-        (_product.parameters[ property.permalink ] || (_product.parameters[ property.permalink ] = [])).push(_characteristic);
+        setParam(_product.parameters, property.permalink, property)
+        setParam(_product.parameters[ property.permalink ], 'characteristics', [])
+
+        _product.parameters[ property.permalink ].characteristics.push(characteristic)
       }
     });
 
@@ -34,6 +26,10 @@ var convertProperties = function (_product) {
         }
       }
     });
+  }
+
+  function setParam(obj, name, value) {
+    (obj[ name ] || (obj[ name ] = value))
   }
 
   return _product;
