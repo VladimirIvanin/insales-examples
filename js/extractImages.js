@@ -6,12 +6,19 @@
 function extractImages(html) {
   var images = [];
   var $content = $(html);
-  $content.find('img').each(function(index, el) {
-    images.push($(el).prop('src'));
+  if ($content.find('img').length > 0) {
+    $content = $content.find('img');
+  }
+
+  $content.each(function(index, el) {
+    if ($(el).is('img')) {
+      images.push($(el).prop('src'));
+    }
   });
 
   return images;
 }
+
 
 /**
  * <script type="text/javascript">
