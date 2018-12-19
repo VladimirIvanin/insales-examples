@@ -28,6 +28,8 @@
 
 Например `/linklists/footer`
 
+Мы храним в одном меню, пермалинки на другие меню (linklists). 
+
 ```
 <ul>
 {% for link in linklists.main.links %}
