@@ -32,9 +32,12 @@
 
 ```
 <ul>
+  <!-- linklists.top-menu.links - основной массив меню -->
   {% for link in linklists.top-menu.links %}
+    <!-- если ссылка содержит /drop/ то вытаскиваем пермалинк для выпадающего меню -->
     {% if link.url contains '/drop/' %}
       {% assign menu_handle = link.url | split: '/drop/' | last %}
+        <!-- если есть меню с пермалинком который мы вытащили в menu_handle то выводим выпадающее меню, иначе выводим ссылку -->
         {% if linklists[menu_handle].links.size > 0 %}
         <li>
           <span>{{ link.title }}</a>
