@@ -1,6 +1,7 @@
 # Сниппеты для платформы InSales
 
 Примеры кода написаны для ознакомительных и учебных целей. 
+
 [Ещё больше сниппетов по ссылке https://github.com/insales-components](https://github.com/insales-components)
 
 ## Корзина
