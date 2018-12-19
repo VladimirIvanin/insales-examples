@@ -30,6 +30,8 @@
 
 Мы храним в одном меню, пермалинки на другие меню (linklists). 
 
+[Демонстрация работы](https://youtu.be/2fcWv1nOelE)
+
 ```twig
 <ul>
   <!-- linklists.top-menu.links - основной массив меню -->
