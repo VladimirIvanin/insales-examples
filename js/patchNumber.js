@@ -34,6 +34,7 @@ function patchNumber (num) {
   if(isString){
     num = num.replace(/\s/g, '');
     num = num.replace(/,/g, '.');
+    num = num.replace(/\D/g, '');
     num = num.replace(/px/g, '');
     num = (isNaN(+num)) ? 1 : +num;
   }
