@@ -30,11 +30,12 @@ function patchNumber (num) {
   if (!isNumber && !isString) {
     return 0;
   }
-
+  
   if(isString){
     num = num.replace(/\s/g, '');
     num = num.replace(/,/g, '.');
-    num = num.replace(/\D/g, '');
+    var partNum = num.split('.');
+    num = (typeof partNum[1] != 'undefined') ? partNum[0].replace(/\D/g, '') + '.' + partNum[1].replace(/\D/g, '') : partNum[0].replace(/\D/g, '');
     num = num.replace(/px/g, '');
     num = (isNaN(+num)) ? 1 : +num;
   }
