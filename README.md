@@ -1,47 +1,29 @@
-# Сниппеты для платформы InSales
+# Примеры для тем InSales
 
-Примеры кода написаны для ознакомительных и учебных целей. 
+Самостоятельные рецепты Liquid, HTML, CSS и JavaScript для витрины. Каждый пример описывает задачу, зависимости и место подключения.
 
-[Ещё больше сниппетов по ссылке https://github.com/insales-components](https://github.com/insales-components)
+Начните с [руководства по использованию](docs/usage.md), затем выберите раздел:
 
-## Корзина
-- [Самый простой пример добавления товара в корзину.](https://github.com/VladimirIvanin/insales-examples/blob/master/product/add_to_cart_single.md)
-- [Удаление товара из корзины](https://github.com/VladimirIvanin/insales-examples/blob/master/cart/del_item.md)
+- [Товары](examples/products/README.md)
+- [Корзина](examples/cart/README.md)
+- [Каталог](examples/catalog/README.md)
+- [Навигация](examples/navigation/README.md)
+- [Поиск](examples/search/README.md)
+- [Избранное и сравнение](examples/lists/README.md)
+- [Формы](examples/forms/README.md)
+- [Контент](examples/content/README.md)
+- [Утилиты](examples/utilities/README.md)
 
-## UI
-- [Меню](https://github.com/VladimirIvanin/insales-examples/tree/master/menu)
-- [Пагинация](https://github.com/VladimirIvanin/insales-examples/blob/master/paginate/paginate.md)
-- [Хлебные крошки](https://github.com/VladimirIvanin/insales-examples/blob/master/breadcrumbs/breadcrumbs.md)
-- [Живой поиск](https://github.com/VladimirIvanin/insales-examples/blob/master/search/search_widget.md)
+## Полезные ресурсы
 
-## Help
+- [InSales Coder](https://github.com/VladimirIvanin/insales-coder) — навык для разработки тем и виджетов InSales.
+- [Документация шаблона четвёртого поколения](https://docs.liquidhub.ru/4%20поколение/Шаблон/).
+- [Документация common.js v2](https://docs.liquidhub.ru/common.v2.js/).
 
-- [Склонение слова «товар»](https://github.com/VladimirIvanin/insales-examples/blob/master/help/product_size.md)
-- [Вывод названия месяца](https://github.com/VladimirIvanin/insales-examples/blob/master/help/article_created_at.md)
+## Заготовки приложений InSales
 
-## Модули
-
-- [Ранее просмотренные товары](https://github.com/VladimirIvanin/RecentlyView)
-- [Определение местоположения пользователя](https://github.com/VladimirIvanin/geoManager)
-- [Избранное](https://github.com/VladimirIvanin/favorites)
-- [Отправка сообщений](https://github.com/VladimirIvanin/InSalesFeedback)
-- [Плагин для обновления информации товара](https://github.com/VladimirIvanin/variantsModifier)
-
-## Плагины
-
-- [Табы на jQuery](https://github.com/VladimirIvanin/dataTabs)
-
-## Tools
-
-- [Утилита для работы с темами InSales на локальном диске](https://github.com/brainmurder/insales-uploader)
-- [Модуль для обмена данными с InSales по средствам Node.js](https://github.com/pomeo/node-insales)
-- [Сборщик шаблонов для InSales](https://github.com/VladimirIvanin/insales-template-builder)
-- [Jade mixins для генерации настроек темы InSales](https://github.com/brainmurder/settings-generatop-InSales)
-
-## Documentation
-
-- [Документация на официальном сайте insales.ru](http://www.insales.ru/collection/documentation)
-- [liquidhub](http://liquidhub.ru/)
-- [Много информации по применению liquid](https://wiki.insales.ru/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0)
-- [Шпаргалка по liquid](http://cheat-sheet.myinsales.ru/)
-- [Рекомендации по структуре проекта темы на платформе InSales](https://github.com/VladimirIvanin/insales-theme)
+- [PHP](https://github.com/VladimirIvanin/insales_app_php)
+- [Go](https://github.com/VladimirIvanin/insales_app_go)
+- [Ruby](https://github.com/VladimirIvanin/insales_app_ruby)
+- [Node.js](https://github.com/VladimirIvanin/insales_app_node)
+- [Python](https://github.com/VladimirIvanin/insales_app_python)
