@@ -25,6 +25,8 @@
 
 - [jquery.cut-list](https://github.com/insales/jquery.cut-list) — переносит пункты списка, которые не помещаются в строку, в меню «Ещё».
 - [my-layout](https://github.com/insales/my-layout) — CSS-основа для секций, адаптивных сеток, изображений и элементов форм.
+- [microAlert](https://github.com/VladimirIvanin/microAlert) — уведомления с настройкой времени показа и оформления.
+- [Tvist](https://github.com/VladimirIvanin/tvist) — адаптивный слайдер с навигацией и пагинацией.
 
 ## Заготовки приложений InSales
 
